@@ -1,0 +1,15 @@
+body{
+  background: url("https://media.giphy.com/media/XBwWNIY6WY7g4/giphy.gif");
+  background-size: cover;
+}
+h1 {
+  /* margin-left: 80px; */
+  text-align: center;
+  margin-top:30px;
+}
+
+button {
+  margin-top: -1900px;
+  margin-left:30px;
+
+}
