@@ -9,11 +9,8 @@ this.game = game;
 this.img = new Image(); 
 this.img.src = 'images/dragonQueen.png';
 this.name = "Danerys Targaryen"
-this.attack = 100;
-this.defense = 100;
-this.soldierCount = 20000;
-this.x = 500;
-this.y = 550;
+this.x = 450;
+this.y = 710;
 this.w = 80;
 this.h = 80;
 this.vx = 15;
@@ -37,31 +34,33 @@ Targaryen.prototype.drawQueen = function () {
   )
 }
 
-Targaryen.prototype.setListeners = function() {
+Targaryen.prototype.setListeners = function(id) {
   document.onkeydown = function(e) {
     e.preventDefault();
     switch(e.keyCode) {
       case KEY_LEFT: 
-        if (this.x > 550) {
+        if (this.x > 20 ) {
           this.x -= this.vx;
         }
         break; 
       case KEY_RIGHT: 
-        if (this.x < 500) {
+        if ( this.x  < 850) {
           this.x += this.vx;
         }
         break; 
       case KEY_UP:
-        if (this.y > 550) {
+        if (this.y > 125){
           this.y -= this.vy;
         }
         break;
       case KEY_DOWN:
-      if (this.y < 500) {
+      if (this.y < 710) {
         this.y += this.vy;
+        this.vy = 2;
+        this.vx = 2;
       }
         break;
     }
+  
   }.bind(this);
-
 }

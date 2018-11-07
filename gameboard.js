@@ -1,5 +1,6 @@
 
 window.onload = function() {
+
     var game = new Game ("myCanvas");
     game.draw();
  
@@ -20,15 +21,16 @@ function Game(id) {
   this.army         = new Army(this);
   this.soldier      = new Soldier(this);
   this.whitewalker  = new Whitewalker(this);
+  this.whitewalker.generateWalkers();
+  this.doom          = new Doom(this);
   // this.nightKing = new nightKing(this);
   this.player = player;
   this.score = 0;
-  this.x = 50;
-  this.y = 100;
-  this.w = 100;
-  this.h = 100;
+  // this.x = x;
+  // this.y = y;
+  // this.w = 100;
+  // this.h = 100;
   this.fps = 60;
-
 
 }
 
@@ -49,24 +51,32 @@ Game.prototype.draw = function () {
     if(player === "S"){
       this.johnsnow.id = player;
       this.johnsnow.drawCharacter();
+      this.johnsnow.setListeners();
     }
     if(player === "L"){
       this.lannister.drawLannister();
+      this.lannister.setListeners();
     }
     if(player === "K"){
       this.khal.drawKhal();
+      this.khal.setListeners();
     }
     if(player === "T"){
       this.targaryen.drawQueen();
+      this.targaryen.setListeners();
     }
     this.army.drawArmy();
     this.army.move();
     this.soldier.drawSoldier();
     this.soldier.move();
-    this.whitewalker.drawWhiteWalker();
+    this.whitewalker.drawWhiteWalkers();
     this.whitewalker.move();
+    this.doom.drawArmy();
+    this.document.move;
   }.bind(this), 16)
+
 }
+
 
 
 

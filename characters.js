@@ -39,23 +39,25 @@ Character.prototype.setListeners = function(id) {
     e.preventDefault();
     switch(e.keyCode) {
       case KEY_LEFT: 
-        if (this.x > 700 ) {
+        if (this.x > 20 ) {
           this.x -= this.vx;
         }
         break; 
       case KEY_RIGHT: 
-        if (this.x < 10) {
+        if ( this.x  < 850) {
           this.x += this.vx;
         }
         break; 
       case KEY_UP:
-        if (this.y > 10){
+        if (this.y > 125){
           this.y -= this.vy;
         }
         break;
       case KEY_DOWN:
-      if (this.y < 1000) {
+      if (this.y < 710) {
         this.y += this.vy;
+        this.vy = 2;
+        this.vx = 2;
       }
         break;
     }
