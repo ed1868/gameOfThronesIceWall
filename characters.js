@@ -5,12 +5,12 @@ var KEY_LEFT = 37;
 
 function Character(game, id) {
 this.game = game;
-this.x = 450;
+this.x = randomIntFromInterval(50,300)+ randomIntFromInterval(40,800);
 this.y = 710;
 this.w = 50;
 this.h = 80;
-this.vx = 15;
-this.vy = 15;
+this.vx = 10;
+this.vy = 10;
 this.img = new Image(); 
 this.id = id;
 this.img.src = 'images/johnSnow.png';

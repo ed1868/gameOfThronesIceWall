@@ -15,18 +15,55 @@
   <title>Game Of Thrones</title>
 </head>
 <body>
-  <h1><a href="https://fontmeme.com/game-of-thrones-font/"><img src="https://fontmeme.com/permalink/181104/0a0ab5ae3ec7df809c0de734ec2efab4.png" alt="game-of-thrones-font" border="0"></a></h1>
+ <h1><a href="www.TrollingTheT'asByMakingThemReadThisLongUseLessSentence.com"><img src="https://fontmeme.com/permalink/181108/37c68bf69e543ea49060e29ac4a10ace.png" alt="game-of-thrones-font" border="0"></a></h1>
   <br>
-  <button id="startGame" type="button" class="btn btn-dark">Start Game</button>
+  <video id="loser" class ="noshow"  >
+      <source src="media/IMG_6195.TRIM.MOV" type ="video/mp4">
+    </video>
+    <video id="winner" class ="noshow"  >
+        <source src="media/IMG_6197.TRIM.MOV" type ="video/mp4">
+      </video>
+  <button id="startGame" type="button" class="btn btn-dark" href="throneBoard.html">Climb Again</button>
   
-  <canvas id="myCanvas" width="1000" height=" 1000">
+  <canvas id="myCanvas"  width="1000" height=" 1000">
   
   </canvas>
-
   <script
   src="https://code.jquery.com/jquery-3.3.1.js"
   integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
   crossorigin="anonymous"></script>
+  <script>
+          var vid = document.getElementById("loser"); 
+          var vidTwo = document.getElementById("winner");
+          var canvas = document.getElementById("myCanvas");
+  
+      function playVid() { 
+            $(canvas).addClass('canvasMagic');
+            $(vid).removeClass('noshow');
+            $(vid).addClass('videoStyle');
+
+            vid.play(); 
+            setTimeout(function(){
+
+                    window.location = 'throneBoard.html';
+
+              },10000) 
+          } 
+
+
+        function winnerVid() {
+          $(canvas).addClass('canvasMagic');
+          $(vidTwo).removeClass('noshow');
+          $(vidTwo).addClass('videStyle');
+
+          vidTwo.play();
+          setTimeout(function(){
+            window.location = 'throneBoard.html';
+          },21000)
+        }
+
+        
+  </script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>

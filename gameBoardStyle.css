@@ -13,3 +13,15 @@ button {
   margin-left:30px;
 
 }
+
+.noshow {
+  display: none;
+}
+.videoStyle {
+  width: 100%;
+  height: 100%;
+}
+.canvasMagic {
+  display:none;
+}
+

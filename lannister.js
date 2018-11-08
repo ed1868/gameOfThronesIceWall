@@ -10,10 +10,10 @@ this.id = id;
 this.img = new Image(); 
 this.img.src = 'images/lannister.png';
 this.name = "Tyrion"
-this.x = 450;
+this.x = randomIntFromInterval(50,300)+ randomIntFromInterval(40,800);
 this.y = 710;
 this.w = 50;
-this.h = 70;
+this.h = 80;
 this.vx = 15;
 this.vy = 15;
 

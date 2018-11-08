@@ -11,7 +11,7 @@ function Army (game) {
   this.frameCounter=0
   this.w = 223;
   this.h = 50;
-  this.x = 400;
+  this.x = 150;
   this.y = 110;
   this.sw = Math.floor(this.w / this.img.frames);
   this.sy = 0;
@@ -70,7 +70,7 @@ Army.prototype.move = function() {
 
 
     if (this.y < 800) {
-      this.y += 0.6;
+      this.y += 2;
     } else {
       this.y = 0
       
@@ -145,7 +145,7 @@ Soldier.prototype.move = function() {
   
   
       if (this.y < 600) {
-        this.y += 0.3;
+        this.y += 2;
       } else {
         this.y  *= -1; 
       }
@@ -204,10 +204,10 @@ Soldier.prototype.move = function() {
 Whitewalker.prototype.move = function() {
   this.walkers.forEach(function(walker){
       if (walker.y < 300) {
-        walker.y += 0.5;
+        walker.y += 4;
       } 
       if (walker.y < 600){
-        walker.y += 0.8;
+        walker.y += 4;
       }
       if (walker.y < 700){
         walker.y += 1;
@@ -291,13 +291,164 @@ Doom.prototype.move = function() {
 
 
     if (this.y < 800) {
-      this.y += 2;
+      this.y += 3;
     } else {
       this.y = 0
       
     }
   }
 
+//////////////////////////////////////// TRON ENEMY /////////////////////////////////////////////////////////////
 
 
 
+function Tron (game) {
+  this.game = game;
+  this.img = new Image(); 
+  this.img.src = 'images/army.png';
+  this.img.frameIndex = 0;
+  this.img.frames = 4;
+  this.frameCounter=0
+  this.w = 223;
+  this.h = 50;
+  this.x = 700;
+  this.y = 110;
+  this.sw = Math.floor(this.w / this.img.frames);
+  this.sy = 0;
+  this.sh = 50;
+  this.dx = 700;
+  this.dy = 110;
+  this.dw = Math.floor(this.w / this.img.frames);
+  this.dh = 50;
+
+
+  this.vx = 3;
+  this.vy = 1;
+
+
+}
+
+Tron.prototype.drawArmy = function() {
+
+
+this.sx = this.img.frameIndex *  Math.floor(this.w / this.img.frames);
+this.frameCounter++
+
+if(this.frameCounter % 10 == 0) {
+  this.img.frameIndex++
+}
+
+  this.game.ctx.drawImage(
+    this.img,
+    this.sx,
+    this.sy,
+    this.sw,
+    this.sh,
+    this.dx,
+    this.y,
+    this.dw,
+    this.dh
+
+  );
+
+ 
+  this.animateArmy();
+  this.move();
+
+}
+
+ 
+Tron.prototype.animateArmy = function() {
+
+  if (this.img.frameIndex > 3) {
+    this.img.frameIndex = 0;
+  }
+
+}
+
+Tron.prototype.move = function() {
+
+
+    if (this.y < 800) {
+      this.y += 3;
+    } else {
+      this.y = 0;
+      
+    }
+  }
+///////////////////////////////////////////BigDaddy //////////////////////////////////////////////////////////////
+  function Jordy (game) {
+    this.game = game;
+    this.img = new Image(); 
+    this.img.src = 'images/army.png';
+    this.img.frameIndex = 0;
+    this.img.frames = 4;
+    this.frameCounter=0
+    this.w = 223;
+    this.h = 50;
+    this.x = 200;
+    this.y = 110;
+    this.sw = Math.floor(this.w / this.img.frames);
+    this.sy = 0;
+    this.sh = 50;
+    this.dx = 200;
+    this.dy = 110;
+    this.dw = Math.floor(this.w / this.img.frames);
+    this.dh = 50;
+  
+  
+    this.vx = 3;
+    this.vy = 1;
+  
+  
+  }
+  
+  Jordy.prototype.drawArmy = function() {
+  
+  
+  this.sx = this.img.frameIndex *  Math.floor(this.w / this.img.frames);
+  this.frameCounter++
+  
+  if(this.frameCounter % 10 == 0) {
+    this.img.frameIndex++
+  }
+  
+    this.game.ctx.drawImage(
+      this.img,
+      this.sx,
+      this.sy,
+      this.sw,
+      this.sh,
+      this.dx,
+      this.y,
+      this.dw,
+      this.dh
+  
+    );
+  
+   
+    this.animateArmy();
+    this.move();
+  
+  }
+  
+   
+  Jordy.prototype.animateArmy = function() {
+  
+    if (this.img.frameIndex > 3) {
+      this.img.frameIndex = 0;
+    }
+  
+  }
+  
+  Jordy.prototype.move = function() {
+  
+  
+      if (this.y < 800) {
+        this.y += 3;
+      } else {
+        this.y = 0;
+        
+      }
+    }
+  

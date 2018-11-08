@@ -10,12 +10,12 @@ this.id = id;
 this.img = new Image(); 
 this.img.src = 'images/khalDrogo.png';
 this.name = "Khal Drogo"
-this.x = 450;
+this.x = randomIntFromInterval(50,300)+ randomIntFromInterval(40,800);
 this.y = 710;
 this.w = 50;
-this.h = 70;
-this.vx = 3;
-this.vy = 5;
+this.h = 80;
+this.vx = 10;
+this.vy = 10;
 
 this.setListeners();
  
