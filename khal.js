@@ -4,9 +4,9 @@ var KEY_DOWN = 40;
 var KEY_LEFT = 37;
 
 
-function Khal(game ,player) {
+function Khal(game , id) {
 this.game = game;
-this.player = player;
+this.id = id;
 this.img = new Image(); 
 this.img.src = 'images/khalDrogo.png';
 this.name = "Khal Drogo"

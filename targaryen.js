@@ -4,8 +4,9 @@ var KEY_DOWN = 40;
 var KEY_LEFT = 37;
 
 
-function Targaryen (game) {
+function Targaryen (game, id) {
 this.game = game;
+this.id = id;
 this.img = new Image(); 
 this.img.src = 'images/dragonQueen.png';
 this.name = "Danerys Targaryen"

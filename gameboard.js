@@ -31,9 +31,8 @@ function Game(id) {
   // this.w = 100;
   // this.h = 100;
   this.fps = 60;
-
+  this.villainXandY = [ this.army, this.soldier, this.whitewalker, this.doom ]
 }
-
 
 
 Game.prototype.drawBackground = function () {
@@ -48,20 +47,27 @@ Game.prototype.draw = function () {
   
   setInterval(function() {
     this.drawBackground();
+    if (  this.isCollision()){
+      console.log("collision ");
+    }
+
     if(player === "S"){
       this.johnsnow.id = player;
       this.johnsnow.drawCharacter();
       this.johnsnow.setListeners();
     }
     if(player === "L"){
+      this.lannister.id = player;
       this.lannister.drawLannister();
       this.lannister.setListeners();
     }
     if(player === "K"){
+      this.khal.id = player;
       this.khal.drawKhal();
       this.khal.setListeners();
     }
     if(player === "T"){
+      this.targaryen.id = player;
       this.targaryen.drawQueen();
       this.targaryen.setListeners();
     }
@@ -72,7 +78,6 @@ Game.prototype.draw = function () {
     this.whitewalker.drawWhiteWalkers();
     this.whitewalker.move();
     this.doom.drawArmy();
-    this.document.move;
   }.bind(this), 16)
 
 }
@@ -80,4 +85,23 @@ Game.prototype.draw = function () {
 
 
 
+Game.prototype.isCollision = function(villainXandY) {
+  // colisiones genéricas 
+  // (p.x + p.w > o.x && o.x + o.w > p.x && p.y + p.h > o.y && o.y + o.h > p.y )
+  debugger
+  return this.villainXandY.some(function(villain) {
+    
+      return (
+        ((this.player.x + this.player.w) >= villain.dx &&
+         this.player.x < (villain.dx+ villain.dw) &&
+         this.player.y + (this.player.h - 20) >= villain.dy &&
+         this.player.y  <= villain.dy+ villain.dh)
+      );
+  }.bind(this));
 
+};
+
+// this.dx,
+// this.y,
+// this.dw,
+// this.dh

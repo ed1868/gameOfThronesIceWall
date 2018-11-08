@@ -92,7 +92,7 @@ function Soldier (game) {
   this.sw = Math.floor(this.w / this.img.frames);
   this.sy = 0;
   this.sh = 50;
-  this.dx = randomIntFromInterval(50,200);
+  this.dx = randomIntFromInterval(50,120);
   this.dy = 700;
   this.dw = Math.floor(this.w / this.img.frames);
   this.dh = 50;
@@ -180,7 +180,7 @@ Soldier.prototype.move = function() {
   Whitewalker.prototype.generateWalkers = function () {
     for(var i = 0; i < this.walkersToGenerate ; i++){
       this.walkers.push(new Whitewalker(this.img,this.x,this.y,this.w,this.h));
-      console.log(this.walkers);
+
   
     }
   }
@@ -189,7 +189,7 @@ Soldier.prototype.move = function() {
   
   Whitewalker.prototype.drawWhiteWalkers = function() {
       this.walkers.forEach(function(walker){
-        console.log(this.walkers);
+ 
         this.game.ctx.drawImage(walker.img,walker.x,walker.y,walker.w,walker.h);
 
     }.bind(this))
@@ -207,10 +207,10 @@ Whitewalker.prototype.move = function() {
         walker.y += 0.5;
       } 
       if (walker.y < 600){
-        walker.y += 1;
+        walker.y += 0.8;
       }
       if (walker.y < 700){
-        walker.y += 5;
+        walker.y += 1;
       }
       else {
 
@@ -237,8 +237,8 @@ function Doom (game) {
   this.sw = Math.floor(this.w / this.img.frames);
   this.sy = 0;
   this.sh = 50;
-  this.dx = 700;
-  this.dy = 700;
+  this.dx = 600;
+  this.dy = 110;
   this.dw = Math.floor(this.w / this.img.frames);
   this.dh = 50;
 
@@ -297,3 +297,7 @@ Doom.prototype.move = function() {
       
     }
   }
+
+
+
+

@@ -3,9 +3,9 @@ var KEY_RIGHT = 39;
 var KEY_DOWN = 40;
 var KEY_LEFT = 37;
 
-function Character(game) {
+function Character(game, id) {
 this.game = game;
-this.id = ""
+this.id = id;
 this.img = new Image(); 
 this.img.src = 'images/johnSnow.png';
 this.name = "John Snow"
@@ -65,5 +65,6 @@ Character.prototype.setListeners = function(id) {
   }.bind(this);
 
 }
+
 
 
