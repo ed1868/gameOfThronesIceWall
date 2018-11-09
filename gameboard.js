@@ -3,7 +3,8 @@ window.onload = function() {
     var game = new Game ("myCanvas");
     game.draw();
 }
-var player = prompt ("Pick A Character ... S :John Snow , L :Joffrey Lannister , T :Daenerys Targaryen , K :Khal Drogo ");
+var player = prompt ("Pick A Character ... S :John Snow , L :Joffrey Lannister , T :Daenerys Targaryen , K :Khal Drogo ").toLocaleUpperCase();
+
 
 
 
@@ -43,13 +44,10 @@ function Game(id) {
   this.walkerCoordinates = this.whitewalker;
 }
 
-Game.prototype.update = function(){
-  this.ctx.drawImage(video,0,0,256,256);   
-  requestAnimationFrame(update); // wait for the browser to be ready to present another animation fram.       
-}
 
 Game.prototype.drawBackground = function () {
   this.ctx.drawImage(this.img, 40,0,1000,900);
+
 }
 
 Game.prototype.draw = function () {
@@ -91,6 +89,7 @@ Game.prototype.draw = function () {
     }
   }.bind(this), 16)
 }
+
 
 
 

@@ -23,7 +23,7 @@
     <video id="winner" class ="noshow"  >
         <source src="media/IMG_6197.TRIM.MOV" type ="video/mp4">
       </video>
-  <button id="startGame" type="button" class="btn btn-dark" href="throneBoard.html">Climb Again</button>
+
   
   <canvas id="myCanvas"  width="1000" height=" 1000">
   
@@ -57,6 +57,7 @@
           $(vidTwo).addClass('videStyle');
 
           vidTwo.play();
+          alert("CONGRATULATIONS !! You Won The Iron Throne!");
           setTimeout(function(){
             window.location = 'throneBoard.html';
           },21000)
