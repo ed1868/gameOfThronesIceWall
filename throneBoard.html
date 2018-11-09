@@ -9,6 +9,7 @@
   <script src="lannister.js"></script>
   <script src="targaryen.js"></script>
   <script src="khal.js"></script>
+  <script src="nightking.js"></script>
   <script src="gameboard.js"></script>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link rel="stylesheet" href="gameBoardStyle.css">
@@ -36,6 +37,7 @@
           var vid = document.getElementById("loser"); 
           var vidTwo = document.getElementById("winner");
           var canvas = document.getElementById("myCanvas");
+          var score = Math.floor( Math.random ( ) * 103);  
   
       function playVid() { 
             $(canvas).addClass('canvasMagic');
@@ -57,10 +59,11 @@
           $(vidTwo).addClass('videStyle');
 
           vidTwo.play();
-          alert("CONGRATULATIONS !! You Won The Iron Throne!");
+          alert(`CONGRATULATIONS !! You Won The Iron Throne! Your score is ${score} `);
+          
           setTimeout(function(){
             window.location = 'throneBoard.html';
-          },21000)
+          },18000)
         }
 
         

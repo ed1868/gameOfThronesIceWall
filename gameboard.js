@@ -35,10 +35,10 @@ function Game(id) {
   this.whitewalker.generateWalkers();
   this.doom          = new Doom(this);
   this.jordy         = new Jordy(this);
-  this.score    = 0;
+  
  
   
-  // this.nightKing = new nightKing(this);
+  this.nightKing = new NightKing(this);
   this.fps = 60;
   this.villainXandY = [ this.army, this.soldier, this.doom , this.tron ,this.jordy ];
   this.walkerCoordinates = this.whitewalker;
@@ -75,6 +75,10 @@ Game.prototype.draw = function () {
       this.player.drawQueen();
       this.player.setListeners();
     }
+    if(player === "nightking"){
+      this.player.drawNight();
+      this.player.setListeners();
+    }
     this.army.drawArmy();
     this.soldier.drawSoldier();
     this.whitewalker.drawWhiteWalkers();
@@ -87,6 +91,8 @@ Game.prototype.draw = function () {
     if (this.player.y <= 127 && !this.isCollision() && !this.isCollisionWhiteWalker() ){
       this.gameWon();
     }
+
+
   }.bind(this), 16)
 }
 
@@ -116,6 +122,18 @@ Game.prototype.isCollisionWhiteWalker = function(walkerCoordinates) {
   }.bind(this));
 };
 
+// Game.prototype.score = function(){
+//   if( !this.isCollision() && !this.isCollisionWhiteWalker()){
+    
+//       this.score += 0.04;
+//       var text = `Your score is ${parseInt(this.score)}`;
+
+//       this.ctx.font = '48px serif';
+//       this.ctx.fillStyle = 'white';
+//       this.ctx.fillText(text, 150, 780, 200);
+
+//   }
+//   };
 
 Game.prototype.gameOver = function() {
   clearInterval(this.intervalId);
